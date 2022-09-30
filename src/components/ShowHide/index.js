@@ -20,35 +20,31 @@ class ShowHide extends Component {
   getButtonText = () => {
     const {isClicked} = this.state
 
-    return isClicked ? 'display-hide' : 'display-flex'
+    return isClicked ? '' : <h1 className="display-flex">Joe</h1>
   }
 
   getJohnButton = () => {
     const {isNotClicked} = this.state
 
-    return isNotClicked ? 'display-hide' : 'display-flex'
+    return isNotClicked ? '' : <h1 className="display-flex">Jonas</h1>
   }
 
   render() {
-    const buttonText = this.getButtonText()
-
-    const johnButtonText = this.getJohnButton()
-
     return (
       <div className="app-container">
         <h1 className="heading">Show/Hide</h1>
         <div className="button-container">
           <div className="card">
             <button type="button" onClick={this.joeButton}>
-              Show/Hide FirstName
+              Show/Hide Firstname
             </button>
-            <h1 className={buttonText}>Joe</h1>
+            {this.getButtonText()}
           </div>
           <div>
             <button type="button" onClick={this.johnButton}>
-              Show/Hide LastName
+              Show/Hide Lastname
             </button>
-            <h1 className={johnButtonText}>Jonas</h1>
+            {this.getJohnButton()}
           </div>
         </div>
       </div>
